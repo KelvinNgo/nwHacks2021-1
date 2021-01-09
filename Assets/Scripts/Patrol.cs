@@ -22,7 +22,7 @@ public class Patrol : MonoBehaviour
                 movingRight = false;
             } else {
                 transform.eulerAngles = new Vector3(0, 0, 0);
-                movingRight = true
+                movingRight = true;
             }
         }
     }
