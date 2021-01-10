@@ -6,6 +6,7 @@ public class PlatformGenerator : MonoBehaviour
 {
     public GameObject platform;
     public GameObject trampoline;
+    public GameObject enemy;
     public Transform genPoint;
     
     private float distanceBetween;
@@ -31,6 +32,10 @@ public class PlatformGenerator : MonoBehaviour
             if(platformType==9){
                 Instantiate(platform, transform.position, transform.rotation);
                 Instantiate(trampoline, new Vector3(transform.position.x+Random.Range(-1,1), transform.position.y+1, 0), transform.rotation);
+            }
+            if(platformType==8){
+                Instantiate(platform, transform.position, transform.rotation);
+                Instantiate(enemy, new Vector3(transform.position.x, transform.position.y+1, 0), transform.rotation);
             }
             else
                 Instantiate(platform, transform.position, transform.rotation);
