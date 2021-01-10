@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D theCollision)
     {
-        if(theCollision.gameObject.tag == "platform")
+        if(theCollision.gameObject.tag == "platform" && myRigidbody.velocity.y==0)
         {
             isGrounded = true;
         }
