@@ -47,7 +47,7 @@ public class Patrol : MonoBehaviour
     {
         source.Play();
         yield return new WaitWhile (()=> source.isPlaying);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Gameover");
     }
 }
 
