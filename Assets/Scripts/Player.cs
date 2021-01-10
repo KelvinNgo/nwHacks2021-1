@@ -7,16 +7,20 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpSpeed;
+    public float fallSpeed;
     private Rigidbody2D myRigidbody;
 
     private bool isGrounded = true;
 
     private bool facingRight = true;
 
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start() 
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -28,7 +32,7 @@ public class Player : MonoBehaviour
         }
 
         if(myRigidbody.velocity.y < 0) {
-                myRigidbody.velocity += Vector2.up * Physics2D.gravity.y * Time.deltaTime * 3.5f;
+                myRigidbody.velocity += Vector2.up * Physics2D.gravity.y * Time.deltaTime * fallSpeed;
         }
     }
 
@@ -38,7 +42,11 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (theCollision.gameObject.tag == "outofbounds")
+        if(theCollision.gameObject.tag == "outofbounds")
+        {
+            SceneManager.LoadScene("Menu");
+        }
+        if(theCollision.gameObject.tag == "patrolenemy")
         {
             SceneManager.LoadScene("Menu");
         }
@@ -72,6 +80,7 @@ public class Player : MonoBehaviour
         {
             myRigidbody.velocity += jumpSpeed * Vector2.up;
             isGrounded = false;
+            source.Play();
         }
     }
 }
