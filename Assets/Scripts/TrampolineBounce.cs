@@ -1,26 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class TrampolineBounce : MonoBehaviour
-{
-    public int springForce;
-    public Collision2D collision;
-    public GameObject subject;
-
-    void Start()
-    {
-        
-    }
-
-
-    void Update()
-    {
-        
-    }
-
-    void OnCollisionEnter2D(Collision2D collision) {
-        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, springForce));
-        Debug.Log("What a bounce");
-    }
-}
+﻿ using UnityEngine;
+ using System.Collections;
+ 
+ public class TrampolineBounce : MonoBehaviour {
+     public float springForce = 1000;
+     private Collision2D collision;
+     private bool bouncing = false;
+ 
+     void OnCollisionEnter2D(Collision2D coll) {
+         if (!bouncing) {
+             bouncing = true;
+             collision = coll;
+         }
+     }
+ 
+     void FixedUpdate () {
+         if (bouncing) {
+             var rb = collision.gameObject.GetComponent<Rigidbody2D> ();
+             rb.velocity = new Vector3 (0, 0, 0);
+             rb.AddForce (new Vector2 (0f, springForce));
+             bouncing = false;
+         }
+     }
+ }
