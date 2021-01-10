@@ -20,9 +20,18 @@ public class Player : MonoBehaviour
     void FixedUpdate() 
     {
         Move(Input.GetAxisRaw("Horizontal"));
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
         {
             Jump();
+        }
+
+        if (myRigidbody.velocity.y > 0)
+        {
+            Physics2D.IgnoreLayerCollision(8, 10, true);
+        }
+        else
+        {
+            Physics2D.IgnoreLayerCollision(8, 10, false);
         }
     }
 

@@ -1226,6 +1226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 5530751377244332577, guid: 3c1af05674fd8b441ac3ebc900597543,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6920927572405430935, guid: 3c1af05674fd8b441ac3ebc900597543,
         type: 3}
       propertyPath: m_RootOrder
