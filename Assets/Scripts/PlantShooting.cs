@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantEnemyBullet : MonoBehaviour
+public class PlantShooting : MonoBehaviour
 {
     [SerializeField]
     GameObject bullet;
@@ -12,19 +12,19 @@ public class PlantEnemyBullet : MonoBehaviour
 
     void Start()
     {
-        fireRate = 5f;
+        fireRate = 1f;
         nextFire = Time.time;
     }
 
     void Update()
     {
-        CheckIfTimeTOFire();
+        CheckIfTimeToFire();
     }
 
     void CheckIfTimeToFire()
     {
         if(Time.time > nextFire) {
-            Instantiate (bullet, transformposition, Quaternion.identity);
+            Instantiate (bullet, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
     }
