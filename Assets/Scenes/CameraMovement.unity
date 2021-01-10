@@ -2114,7 +2114,7 @@ MonoBehaviour:
     type: 3}
   trampoline: {fileID: 3668522685852070255, guid: 2687613ab4ee22b4bb7f3719c01cc1d9,
     type: 3}
-  enemy: {fileID: 3783523480040135090, guid: 8cfd0deb1472953438227b9459af4da4, type: 3}
+  enemy: {fileID: 5507799796646300551, guid: 8cfd0deb1472953438227b9459af4da4, type: 3}
   disappearing: {fileID: 391411839381069457, guid: 4e41f10aa9252e940b74488b547d2550,
     type: 3}
   genPoint: {fileID: 1781300530}
