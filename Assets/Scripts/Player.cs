@@ -42,13 +42,9 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
-        if(theCollision.gameObject.tag == "outofbounds")
+        if(theCollision.gameObject.tag == "outofbounds" || theCollision.gameObject.tag == "patrolenemy")
         {
-            SceneManager.LoadScene("Menu");
-        }
-        if(theCollision.gameObject.tag == "patrolenemy")
-        {
-            SceneManager.LoadScene("Menu");
+            Destroy(gameObject);
         }
     }
 
