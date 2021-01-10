@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class FallingHazard : MonoBehaviour
 {
+    public float frequency = 0.5f;
     public GameObject HazardBlock;
-    private float SpawnHazardTimer = 2f;
-
-    void Start()
+ 
+    private void OnEnable()
     {
-        
+        StartCoroutine(Spawn());
     }
-
-    void Update()
+ 
+    private void OnDisable()
     {
-        InstantiateHazard();
+        StopAllCoroutines();
     }
-
-    void InstantiateHazard()
+ 
+    private IEnumerator Spawn()
     {
-        SpawnHazardTimer -= Time.deltaTime;
-        if(SpawnHazardTimer <= 0) {
-            Instantiate (HazardBlock, new Vector2(-1.76f, -0.55f), Quaternion.identity);
-            SpawnHazardTimer = 2f;
+        WaitForSeconds delay = new WaitForSeconds(frequency);
+ 
+        while(true)
+        {
+            yield return delay;
+ 
+            Destroy(Instantiate(HazardBlock, transform.position, Quaternion.identity), 5f);
+ 
         }
-    }
+        }
 }
