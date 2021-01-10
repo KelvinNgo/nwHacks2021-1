@@ -27,8 +27,8 @@ public class PlatformGenerator : MonoBehaviour
             distanceBetween = Random.Range(1, 6);
             transform.position = new Vector3(Random.Range(-screenWidth/2, screenWidth/2), transform.position.y + distanceBetween + platformHeight, 0);
 
-            platformType = Random.Range(0, 15);
-            if(platformType<=15){
+            platformType = Random.Range(0, 10);
+            if(platformType==9){
                 Instantiate(platform, transform.position, transform.rotation);
                 Instantiate(trampoline, new Vector3(transform.position.x+Random.Range(-1,1), transform.position.y+1, 0), transform.rotation);
             }
