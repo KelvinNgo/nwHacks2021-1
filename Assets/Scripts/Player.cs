@@ -7,22 +7,30 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float jumpSpeed;
     private Rigidbody2D myRigidbody;
-    //private Transform transform;
+
+    private bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start() 
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        //transform = this.transform;
     }
 
     // Update is called once per frame
     void FixedUpdate() 
     {
         Move(Input.GetAxisRaw("Horizontal"));
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
         {
             Jump();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D theCollision)
+    {
+        if(theCollision.gameObject.tag == "platform")
+        {
+            isGrounded = true;
         }
     }
 
@@ -35,6 +43,10 @@ public class Player : MonoBehaviour
 
     public void Jump()
     {
-        myRigidbody.velocity += jumpSpeed * Vector2.up;
+        if(isGrounded)
+        {
+            myRigidbody.velocity += jumpSpeed * Vector2.up;
+            isGrounded = false;
+        }
     }
 }
