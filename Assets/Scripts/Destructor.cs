@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformDestructor : MonoBehaviour
+public class Destructor : MonoBehaviour
 {
     public GameObject destPoint;
     // Start is called before the first frame update
     void Start()
     {
-        destPoint = GameObject.Find("PlatformDestructionPoint");
+        destPoint = GameObject.Find("DestructionPoint");
     }
 
     // Update is called once per frame
