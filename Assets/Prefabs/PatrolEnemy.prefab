@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3783523480040135090
+--- !u!1 &5507799796646300551
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 923360381922183429}
-  - component: {fileID: 3939246354441905438}
-  - component: {fileID: 4100501042723532225}
-  - component: {fileID: 8826943558959901666}
-  - component: {fileID: 6045474141149442219}
+  - component: {fileID: 5507799796646300552}
+  - component: {fileID: 5507799796646300555}
+  - component: {fileID: 5507799796646300554}
+  - component: {fileID: 5507799796646300549}
+  - component: {fileID: 5507799796646300548}
   m_Layer: 0
   m_Name: PatrolEnemy
   m_TagString: Untagged
@@ -20,28 +20,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &923360381922183429
+--- !u!4 &5507799796646300552
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3783523480040135090}
+  m_GameObject: {fileID: 5507799796646300551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.86, y: -0.62, z: 0}
+  m_LocalPosition: {x: -6.36, y: 1.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 352100728832360800}
+  - {fileID: 5507799796649271528}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3939246354441905438
+--- !u!212 &5507799796646300555
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3783523480040135090}
+  m_GameObject: {fileID: 5507799796646300551}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -86,14 +86,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4100501042723532225
+--- !u!95 &5507799796646300554
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3783523480040135090}
+  m_GameObject: {fileID: 5507799796646300551}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 75fdae97335de3d4bae53dc412641a68, type: 2}
@@ -105,28 +105,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8826943558959901666
+--- !u!114 &5507799796646300549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3783523480040135090}
+  m_GameObject: {fileID: 5507799796646300551}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed0283734ce12834bbb8f5bb4d988b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0.5
   distance: 0
-  groundDetection: {fileID: 352100728832360800}
---- !u!61 &6045474141149442219
+  groundDetection: {fileID: 5507799796649271528}
+--- !u!61 &5507799796646300548
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3783523480040135090}
+  m_GameObject: {fileID: 5507799796646300551}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -146,7 +146,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81, y: 0.8333333}
   m_EdgeRadius: 0
---- !u!1 &8948574563807000699
+--- !u!1 &5507799796649271531
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,25 +154,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 352100728832360800}
+  - component: {fileID: 5507799796649271528}
   m_Layer: 0
-  m_Name: GroundDetection
+  m_Name: Ground Detection
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &352100728832360800
+--- !u!4 &5507799796649271528
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8948574563807000699}
+  m_GameObject: {fileID: 5507799796649271531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -0.15, z: 0}
-  m_LocalScale: {x: -0.715964, y: -0.715964, z: -0.715964}
+  m_LocalPosition: {x: 0.53, y: -0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 923360381922183429}
+  m_Father: {fileID: 5507799796646300552}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
