@@ -7,6 +7,7 @@ public class PlatformGenerator : MonoBehaviour
     public GameObject platform;
     public GameObject trampoline;
     public GameObject enemy;
+    public GameObject disappearing;
     public Transform genPoint;
     
     private float distanceBetween;
@@ -26,19 +27,24 @@ public class PlatformGenerator : MonoBehaviour
         if(transform.position.y < genPoint.position.y)
         {
             distanceBetween = Random.Range(1, 6);
-            transform.position = new Vector3(Random.Range(-screenWidth/2, screenWidth/2), transform.position.y + distanceBetween + platformHeight, 0);
+            float distanceX = Random.Range(-screenWidth/2, screenWidth/2);
+            
+            transform.position = new Vector3(distanceX, transform.position.y + distanceBetween + platformHeight, 0);
 
             platformType = Random.Range(0, 10);
-            if(platformType==9){
+            switch(platformType) {
+            case 0:
                 Instantiate(platform, transform.position, transform.rotation);
                 Instantiate(trampoline, new Vector3(transform.position.x+Random.Range(-1,1), transform.position.y+1, 0), transform.rotation);
-            }
-            if(platformType==8){
+                break;
+            case 1:
                 Instantiate(platform, transform.position, transform.rotation);
                 Instantiate(enemy, new Vector3(transform.position.x, transform.position.y+1, 0), transform.rotation);
-            }
-            else
+                break;
+            default:
                 Instantiate(platform, transform.position, transform.rotation);
+                break;
+            }
         }
     }
 }
