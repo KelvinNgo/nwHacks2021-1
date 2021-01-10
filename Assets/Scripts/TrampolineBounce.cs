@@ -14,7 +14,8 @@
      }
  
      void FixedUpdate () {
-         if (bouncing && !collision.gameObject.tag.Equals("platform")) {
+         if (bouncing && !collision.gameObject.tag.Equals("platform") && !collision.gameObject.tag.Equals("outofbounds") 
+         && !collision.gameObject.tag.Equals("patrolenemy")) {
              Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D> ();
              rb.velocity = new Vector3 (0, 0, 0);
              rb.AddForce (new Vector2 (0f, springForce));
