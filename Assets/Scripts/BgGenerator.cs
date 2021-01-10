@@ -7,7 +7,7 @@ public class BgGenerator : MonoBehaviour
     public GameObject background;
     public Transform genPoint;
 
-    private float backgroundHeight = 16;
+    private float backgroundHeight = 32;
     // Start is called before the first frame update
     void Start()
     {
