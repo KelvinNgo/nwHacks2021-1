@@ -7,13 +7,13 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float jumpSpeed;
     private Rigidbody2D myRigidbody;
-    //private Transform transform;
+
+    private bool isGrounded = true;
 
     // Start is called before the first frame update
     void Start() 
     {
         myRigidbody = GetComponent<Rigidbody2D>();
-        //transform = this.transform;
     }
 
     // Update is called once per frame
@@ -24,14 +24,13 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
+    }
 
-        if (myRigidbody.velocity.y > 0)
+    void OnCollisionEnter2D(Collision2D theCollision)
+    {
+        if(theCollision.gameObject.tag == "platform")
         {
-            Physics2D.IgnoreLayerCollision(8, 10, true);
-        }
-        else
-        {
-            Physics2D.IgnoreLayerCollision(8, 10, false);
+            isGrounded = true;
         }
     }
 
@@ -44,6 +43,10 @@ public class Player : MonoBehaviour
 
     public void Jump()
     {
-        myRigidbody.velocity += jumpSpeed * Vector2.up;
+        if(isGrounded)
+        {
+            myRigidbody.velocity += jumpSpeed * Vector2.up;
+            isGrounded = false;
+        }
     }
 }
