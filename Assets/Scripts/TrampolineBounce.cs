@@ -14,8 +14,8 @@
      }
  
      void FixedUpdate () {
-         if (bouncing) {
-             var rb = collision.gameObject.GetComponent<Rigidbody2D> ();
+         if (bouncing && !collision.gameObject.tag.Equals("platform")) {
+             Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D> ();
              rb.velocity = new Vector3 (0, 0, 0);
              rb.AddForce (new Vector2 (0f, springForce));
              bouncing = false;
