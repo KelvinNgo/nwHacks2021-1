@@ -16,7 +16,7 @@ public class LeftButton : MonoBehaviour
 
     void TaskOnClick()
     {
-        float move = -6;
+        float move = 1;
         player.Move(move);
     }
 }
