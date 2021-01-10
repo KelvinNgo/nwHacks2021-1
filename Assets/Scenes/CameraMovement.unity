@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be00ad7d0b8dca94ca9ebc0e29eecf60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 0.025
 --- !u!4 &340104953
 Transform:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2002788512}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &370068180
 GameObject:
@@ -1042,7 +1042,7 @@ Transform:
   - {fileID: 1935352911}
   - {fileID: 370068181}
   m_Father: {fileID: 2002788512}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &733404345 stripped
 Transform:
@@ -1222,7 +1222,7 @@ PrefabInstance:
     - target: {fileID: 3577174253651548676, guid: 1b2cc1bc54586584abd7d000be8d6535,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3577174253651548676, guid: 1b2cc1bc54586584abd7d000be8d6535,
         type: 3}
@@ -1494,7 +1494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935352910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -30, z: 10}
+  m_LocalPosition: {x: 0, y: -33, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -1623,9 +1623,9 @@ Transform:
   - {fileID: 932913215}
   - {fileID: 284713888}
   - {fileID: 733404345}
+  - {fileID: 429168137}
   - {fileID: 519420032}
   - {fileID: 340104953}
-  - {fileID: 429168137}
   - {fileID: 1511290969}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1701,6 +1701,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FlipY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477867573690045309, guid: c6eac7325a35d4b45b84598381fc7588,
+        type: 3}
+      propertyPath: sprites.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3477867573690045310, guid: c6eac7325a35d4b45b84598381fc7588,
         type: 3}
