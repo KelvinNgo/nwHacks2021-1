@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     private bool isGrounded = true;
 
+    private bool facingRight = true;
+
     // Start is called before the first frame update
     void Start() 
     {
@@ -34,11 +36,26 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 Scaler = transform.localScale;
+        Scaler.x *= -1;
+        transform.localScale = Scaler;
+    }
+
     public void Move(float horizontal)
     {
         Vector2 move = myRigidbody.velocity;
         move.x = horizontal * moveSpeed;
         myRigidbody.velocity = move;
+        if (facingRight && horizontal < 0)
+        {
+            Flip();
+        } else if(!facingRight && horizontal > 0)
+        {
+            Flip();
+        }
     }
 
     public void Jump()
