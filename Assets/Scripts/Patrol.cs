@@ -1,18 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Patrol : MonoBehaviour
 {
     public float speed;
     public float distance;
-
-    private bool movingRight = true;
-
     public Transform groundDetection;
 
-    void Update(){
+    private bool movingRight = true;
+    private Rigidbody2D myRigidbody;
+    private AudioSource source;
 
+    void Start()
+    {
+        myRigidbody = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
@@ -27,4 +35,19 @@ public class Patrol : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D theCollision)
+    {
+        if(theCollision.gameObject.tag == "Player")
+        {
+            StartCoroutine (PlayerGameOver());
+        }
+    }
+
+        private IEnumerator PlayerGameOver()
+    {
+        source.Play();
+        yield return new WaitWhile (()=> source.isPlaying);
+        SceneManager.LoadScene("Menu");
+    }
 }
+
