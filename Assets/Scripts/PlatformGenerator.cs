@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlatformGenerator : MonoBehaviour
 {
     public GameObject platform;
+    public GameObject trampoline;
     public Transform genPoint;
     
     private float distanceBetween;
     private float platformHeight = 1;
     private float screenWidth = 14;
+    private int platformType;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +27,13 @@ public class PlatformGenerator : MonoBehaviour
             distanceBetween = Random.Range(1, 6);
             transform.position = new Vector3(Random.Range(-screenWidth/2, screenWidth/2), transform.position.y + distanceBetween + platformHeight, 0);
 
-            Instantiate(platform, transform.position, transform.rotation);
+            platformType = Random.Range(0, 15);
+            if(platformType<=15){
+                Instantiate(platform, transform.position, transform.rotation);
+                Instantiate(trampoline, new Vector3(transform.position.x+Random.Range(-1,1), transform.position.y+1, 0), transform.rotation);
+            }
+            else
+                Instantiate(platform, transform.position, transform.rotation);
         }
-            
     }
 }

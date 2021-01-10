@@ -1016,7 +1016,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 370068180}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ab0cbc8186dfe7c41b958e20e7d91455, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1566,6 +1566,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 4785754771588047002, guid: 3c1af05674fd8b441ac3ebc900597543,
     type: 3}
+  trampoline: {fileID: 3668522685852070255, guid: 2687613ab4ee22b4bb7f3719c01cc1d9,
+    type: 3}
   genPoint: {fileID: 1781300530}
 --- !u!1 &1709438245
 GameObject:
@@ -1667,7 +1669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935352910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -30, z: 10}
+  m_LocalPosition: {x: 0, y: -33, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
