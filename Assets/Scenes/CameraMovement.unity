@@ -1388,12 +1388,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b2cc1bc54586584abd7d000be8d6535, type: 3}
---- !u!4 &1299482994 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3477867573690045297, guid: c6eac7325a35d4b45b84598381fc7588,
-    type: 3}
-  m_PrefabInstance: {fileID: 3477867574496159627}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1393050944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1489,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1299482994}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 340104953}
   m_Lens:
     FieldOfView: 60
@@ -1575,7 +1569,9 @@ MonoBehaviour:
     type: 3}
   trampoline: {fileID: 3668522685852070255, guid: 2687613ab4ee22b4bb7f3719c01cc1d9,
     type: 3}
-  enemy: {fileID: 5951193558752513109, guid: 8cfd0deb1472953438227b9459af4da4, type: 3}
+  enemy: {fileID: 3783523480040135090, guid: 8cfd0deb1472953438227b9459af4da4, type: 3}
+  disappearing: {fileID: 391411839381069457, guid: 4e41f10aa9252e940b74488b547d2550,
+    type: 3}
   genPoint: {fileID: 1781300530}
 --- !u!1 &1663094435
 GameObject:
@@ -1817,19 +1813,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2002788512}
     m_Modifications:
-    - target: {fileID: 1172922156, guid: 3c1af05674fd8b441ac3ebc900597543, type: 3}
-      propertyPath: destPoint
-      value: 
-      objectReference: {fileID: 1935352910}
     - target: {fileID: 4785754771588047002, guid: 3c1af05674fd8b441ac3ebc900597543,
         type: 3}
       propertyPath: m_Name
       value: Platform
-      objectReference: {fileID: 0}
-    - target: {fileID: 5530751377244332577, guid: 3c1af05674fd8b441ac3ebc900597543,
-        type: 3}
-      propertyPath: m_UsedByEffector
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6920927572405430935, guid: 3c1af05674fd8b441ac3ebc900597543,
         type: 3}
