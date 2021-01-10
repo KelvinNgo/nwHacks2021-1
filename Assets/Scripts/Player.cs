@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed;
     public float jumpSpeed;
+    public float fallSpeed;
     private Rigidbody2D myRigidbody;
 
     private bool isGrounded = true;
@@ -28,7 +29,7 @@ public class Player : MonoBehaviour
         }
 
         if(myRigidbody.velocity.y < 0) {
-                myRigidbody.velocity += Vector2.up * Physics2D.gravity.y * Time.deltaTime * 3.5f;
+                myRigidbody.velocity += Vector2.up * Physics2D.gravity.y * Time.deltaTime * fallSpeed;
         }
     }
 
