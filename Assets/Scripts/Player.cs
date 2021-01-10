@@ -11,8 +11,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D myRigidbody;
 
     private bool isGrounded = true;
-
     private bool facingRight = true;
+    private bool isJumping;
+    private float movementInput;
 
     private AudioSource source;
 
@@ -21,18 +22,32 @@ public class Player : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         source = GetComponent<AudioSource>();
+        isJumping = false;
     }
 
     void Update()
     {
-        Move(Input.GetAxisRaw("Horizontal"));
+        movementInput = Input.GetAxisRaw("Horizontal");
         if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
         {
-            Jump();
+            isJumping = true;
         }
 
+        
+    }
+
+    void FixedUpdate()
+    {
+        if(isJumping)
+        {
+            Jump();
+            isJumping = false;
+        }
+
+        Move(movementInput);
+
         if(myRigidbody.velocity.y < 0) {
-                myRigidbody.velocity += Vector2.up * Physics2D.gravity.y * Time.deltaTime * fallSpeed;
+            myRigidbody.velocity += Vector2.up * Physics2D.gravity.y * Time.deltaTime * fallSpeed;
         }
     }
 
