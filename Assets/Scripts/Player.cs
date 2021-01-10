@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class Player : MonoBehaviour
         if(theCollision.gameObject.tag == "platform")
         {
             isGrounded = true;
+        }
+        if (theCollision.gameObject.tag == "outofbounds")
+        {
+            SceneManager.LoadScene("Menu");
         }
     }
 
