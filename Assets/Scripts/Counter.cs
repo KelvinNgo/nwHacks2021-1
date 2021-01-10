@@ -1,21 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Counter : MonoBehaviour
 {
-    Counter text;
-    // InitialX integer;
+    private TextMeshProUGUI counterText; 
+    private int score;
+    // counterText = GetComponent.GetComponentInChildren<CounterText>();
     // Start is called before the first frame update
     void Start()
     {
-        // InitialX = 0;
-        text = GetComponent<Counter>();
+        counterText = GetComponent<TextMeshProUGUI>();
+        score = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        counterText.text = score.ToString();
+        score++;
     }
 }
