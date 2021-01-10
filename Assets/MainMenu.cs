@@ -10,4 +10,11 @@ public class MainMenu : MonoBehaviour
         // Loads the next level/scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void ExitGame () 
+    {
+        Debug.Log("Quit game");
+        // Exits the game
+        Application.Quit();
+    }
 }
