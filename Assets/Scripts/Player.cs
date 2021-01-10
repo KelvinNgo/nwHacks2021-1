@@ -19,13 +19,16 @@ public class Player : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate() 
+    void Update()
     {
         Move(Input.GetAxisRaw("Horizontal"));
         if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
         {
             Jump();
+        }
+
+        if(myRigidbody.velocity.y < 0) {
+                myRigidbody.velocity += Vector2.up * Physics2D.gravity.y * Time.deltaTime * 3.5f;
         }
     }
 
