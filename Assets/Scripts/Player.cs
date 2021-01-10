@@ -14,10 +14,13 @@ public class Player : MonoBehaviour
 
     private bool facingRight = true;
 
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start() 
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -77,6 +80,7 @@ public class Player : MonoBehaviour
         {
             myRigidbody.velocity += jumpSpeed * Vector2.up;
             isGrounded = false;
+            source.Play();
         }
     }
 }
