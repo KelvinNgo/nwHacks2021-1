@@ -25,7 +25,7 @@ public class BulletPhysics : MonoBehaviour
         if(col.gameObject.name.Equals ("Player"))
         {
             Debug.Log("Ouch!");
-            Destroy (gameObject)
+            Destroy (gameObject);
         }
     }
 }

@@ -25,7 +25,7 @@ public class PlantEnemyBullet : MonoBehaviour
     {
         if(Time.time > nextFire) {
             Instantiate (bullet, transformposition, Quaternion.identity);
-            nextFire = Time.time + fireRate
+            nextFire = Time.time + fireRate;
         }
     }
 }
