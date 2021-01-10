@@ -9,7 +9,7 @@ public class PlatformGenerator : MonoBehaviour
     
     private float distanceBetween;
     private float platformHeight = 1;
-    private float screenWidth = 9;
+    private float screenWidth = 14;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class PlatformGenerator : MonoBehaviour
     {
         if(transform.position.y < genPoint.position.y)
         {
-            distanceBetween = Random.Range(3, 6);
+            distanceBetween = Random.Range(1, 6);
             transform.position = new Vector3(Random.Range(-screenWidth/2, screenWidth/2), transform.position.y + distanceBetween + platformHeight, 0);
 
             Instantiate(platform, transform.position, transform.rotation);
